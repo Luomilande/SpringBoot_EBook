@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爬取数据信息展示 for Bootstrap</title>
+    <link rel="icon" href="img/icons/book.png">
+    <!-- Bootstrap & Snippet plugin core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 样式 -->
+    <link href="/css/stickup.css" rel="stylesheet">
+    <link href="/css/style1.css" rel="stylesheet">
+    <!-- 样式 -->
+</head>
+
+<body style="padding-bottom:0px">
+    <!-- START THE COVER -->
+    <div id="home" class="carousel">
+
+        <div class="carousel-inner" style="">
+            <div class="item active">
+                <div class="container">
+                    <div class="carousel-caption" id="info">
+                        <h1>Ebook</h1>
+                        <h3>爬取数据信息展示 for Bootstrap</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END COVER -->
+        <!-- 导航栏 -->
+        <div class="navbar-wrapper" id="daohang" style="margin-top:0px;z-index:1;">
+
+            <nav class="navbar navbar-default" id="daohang" style="margin-bottom:0px;">
+
+                <div class="container-fluid" id="chuizhi">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- <a class="navbar-brand" href="#">
+                        <img alt="Brand" src="images/logo4.png">
+                    </a> -->
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav">
+
+                            <li><a href="index.html">首页</a></li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li><a href="info.html">个人介绍</a></li>
+                            <li>
+                                <a href="#"></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">假装有内容 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">只是</a></li>
+                                    <li><a href="#">表现</a></li>
+                                    <li><a href="#">我有</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">下拉框</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">而已</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">搜索</button>
+                        </form>
+
+
+                        <button type="button" class="btn btn-primary" onclick='toggleFullScreen();'
+                            style="margin:8px;float:right;">全屏</button>
+
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+
+            </nav>
+        </div>
+        <!-- END 导航栏 -->
+        <!-- @*<div>
+            <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=55" style="border:solid 1px #7ec8ea" width="255" height="294" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>*@ -->
+        <!-- START THE CONTENT -->
+        <div id='contact'>
+            <!-- @RenderBody() body内容处-->
+
+            <div class="row">
+                <div class="col-sm-3 col-md-3"></div>
+                <div id="test">
+
+                </div>
+                <div class="col-sm-3 col-md-3"></div>
+            </div>
+           
+
+            <!-- START THE FOOTER -->
+            <footer id="contact" class="row featurette">
+                <div class="row">
+                    <br>
+                    <div class="text-center col-sm-12 col-lg-12">
+
+                        <h2 class="featurette-heading">与我保持联系。<br><span class='text-muted'>我也不能随时跟进。</span></h2>
+                        <br><br>
+                    </div>
+                    <div class="col-12 col-lg-12">
+                        <div class="col-lg-offset-2 col-lg-2 text-center">
+                            <a href="http://github.com/LiranCohen/stickUp"><img src="/img/icons/Windows.png"></a>
+                            <h3>Windows</h3>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <a href="http://www.twitter.com/itsLiran"><img src="/img/icons/HTML5.png"></a>
+                            <h3>HTML5</h3>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <a href="http://plus.google.com/+LiranCohen"><img src="/img/icons/Chrome.png"></a>
+                            <h3>Chrome</h3>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <a target="_blank"
+                                href="mailto:lirancohen@me.com?subject=stickUp%20Contact%20from%20Website"><img
+                                    src="/img/icons/Mail.png"></a>
+
+                            <h3>E-Mail</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="text-center">
+                        <h3 class="featurette-heading">本网站</h3>
+                        <h4>基于Bootstrap开发制作</h4>
+                    </span><br>
+                    <div class="text-center col-sm-12 col-lg-12">
+                        <p>© 2017 lc | Make by <a href="http://www.getbootstrap.com">Bootstrap Support</a></p>
+                        <!-- @*<header class="bs-docs-nav navbar navbar-static-top" id="top"></header>
+                        <a href="#top"> <span class="label label-danger">Back to top</span></a>*@ -->
+                    </div>
+                </div>
+            </footer>
+            <!-- END FOOTER -->
+        </div>
+        <!-- END CONTENT -->
+        <p id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
+        <div style="position: fixed;bottom:-8px;z-index:11;"><object type="application/x-shockwave-flash"
+                style="outline:none;" data="https://cdn.abowman.com/widgets/hamster/hamster.swf?" width="200"
+                height="160">
+                <param name="movie" value="https://cdn.abowman.com/widgets/hamster/hamster.swf?">
+                <param name="AllowScriptAccess" value="always">
+                <param name="wmode" value="opaque"></object></div>
+        <!-- Bootstrap & Plugins core JavaScript
+    ================================================== -->
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/cation.js"></script>
+        <script src="/js/Top.js"></script>
+        <script src="/js/Mouse.js"></script>
+        <!-- <script>
+
+            document.getElementById("Login").onclick = function () { location.href = "/Home/Login"; };
+        </script> -->
+        <script>
+            window.onload = function () {
+                var info;
+                $.ajax({
+                    url: 'http://localhost:8080/index',
+                    method: 'post',
+                    data: null,
+                    dataType: 'JSON',
+                    success: function (data1) {
+                       // alert(data.id);
+                         $.each(data1, function(i, item) {
+                          $("#test").append(
+                            "<div class='col-sm-2 col-md-2'>"+
+                        "<div class='thumbnail'>"+
+                            "<img src='"+item.imgurl+"' alt='...'style='height: 300px;'>"+
+                            "<div class='caption'>"+
+                                "<h3>"+item.bookname+"</h3>"+
+                                "<p>"+item.author+"</p>"+
+                                "<p><span  class='label label-info'>"+item.state+" </span> <span  class='label label-info'style='margin-left: 20px;'>"+item.wordnumber+"</span></p>"+
+                              
+                                "<p style='height: 100px;overflow: hidden;'>"+item.synopsis+"</p>"+
+                                "<p><a href='/info.html?id="+item.id+"' class='btn btn-primary' role='button' title='章节内容'>详情</a><a type='button' class='btn  btn-primary btn-success dropdown-toggle' data-toggle='modal' href='http://localhost:8080/download?id="+item.id+"'style='margin-left: 20px;' title='全章下载'>下载</a> </p>"+
+                                
+                           " </div>"+
+                        "</div>"+
+                    "</div>"
+                             );
+                    })
+
+                    },
+                    error: function (data) {}
+                });
+            }
+        </script>
+        <script language="javaScript">
+            var d = new Date();
+            var h = d.getHours();
+            var s = '';
+            if (h >= 1 && h < 8) {
+                s = '早上好';
+            } else if (h >= 8 && h < 11) {
+                s = '上午好';
+            } else if (h >= 11 && h < 13) {
+                s = '中午好';
+            } else if (h >= 13 && h < 17) {
+                s = '下午好';
+            } else if (h >= 17 && h < 24) {
+                s = '晚上好';
+            }
+            var a =
+                "<h1 style='font-size:60px'>Welcome.</h1>" +
+                "<h3>" + s + ",Admin</h3>" +
+                "<p></p>";
+            $("#info").append(a);
+        </script>
+    </div>
+</body>
+
+</html>

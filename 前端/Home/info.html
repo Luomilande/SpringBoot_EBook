@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://v3.bootcss.com/examples/jumbotron/ -->
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="img/icons/book.png">
+
+  <title>爬取数据信息展示 for Bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style2.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <style type="text/css" abt="234"></style>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://v3.bootcss.com/examples/jumbotron/#"><span
+            class="glyphicon glyphicon-cloud" aria-hidden="true"></span></a>
+      </div>
+    </div>
+  </nav> -->
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Hello, Ebook!</h1>
+      <div id="synopsis">
+
+      </div>
+      <p><a class="btn btn-primary btn-lg" href="index.html" role="button">首页
+          »</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row" id="nodeinfo">
+
+      <!-- Button trigger modal -->
+      <!-- Modal -->
+
+
+      <!-- <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>...</p>
+            <p><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+                Launch demo modal
+              </button></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>...</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
+                role="button">Button</a></p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <hr>
+ 
+    <footer>
+      <p>© 2019 lc & Company, Inc.</p>
+    </footer>
+  </div> <!-- /container -->
+  <p id="back-to-top"><a href="#top"><span></span>返回顶部</a></p>
+  <script>
+    var id;
+    window.onload = function () {
+      var getParam = function (key) {
+        var lot = location.search;
+        var reg = new RegExp(".*" + key + "\\s*=([^=&#]*)(?=&|#|).*", "g");
+        return decodeURIComponent(lot.replace(reg, "$1"));
+      }
+      var id = getParam("id");
+      var url1 = 'http://localhost:8080/list?id=' + id;
+      var url2 ='http://localhost:8080/getbookinfo?id=' + id;
+      conn(url2,a4)
+      conn(url1, a1);
+    }
+  </script>
+  <script>
+    function conn(url, callback) {
+      $.ajax({
+        url: url,
+        method: 'post',
+        data: null,
+        dataType: 'JSON',
+        success: function (data) {
+         // $.each(data, function (i, item) {
+            if (callback) callback(data);
+         // });
+        },
+        error: function (data) {}
+      });
+    }
+
+    function a1(data1) {
+      $.each(data1, function (i, data) {
+           // if (callback) callback(item);
+           var title=data.nodeName;
+           var arr=title.split(" ");
+           if(arr[1]==null)
+           {
+             arr[1]="通知信息";
+           }
+      $("#nodeinfo").append(
+        "<div class='col-sm-3 col-md-3'>" +
+        "<div class='thumbnail'>" +
+        "<img src='"+data.imgurl+"' alt='...''>" +
+        "<div class='caption'>" +
+        "<h3 id='titleh3'>" + arr[0] + "</h3>" +
+        "<h4 id='arr'>" + arr[1] + "</h4>" +
+        "<p>" + data.nodedate + "</p>" +
+        "<p><button type='button' id='testA' class='btn btn-primary btn-lg' data-toggle='modal' onclick='a3(" + data.id + ")' data-target='#" + data.id + "' title='章节内容'>详情</button> "+
+        "   <a type='button' class='btn  btn-lg  btn-success dropdown-toggle' data-toggle='modal' href='http://localhost:8080/download?id=" + data.id+"' title='章节下载'>下载</a></p>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+
+        " <div class='modal fade' id=" + data.id + " tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>" +
+        "<div class='modal-dialog' role='document'>" +
+        " <div class='modal-content'>" +
+        " <div class='modal-header'>" +
+        " <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>" +
+        "<h4 class='modal-title' id='myModalLabel'>" + data.nodeName + "</h4>" +
+        "</div><div class='modal-body'id='body" + data.id + "'>" +
+        "</div><div class='modal-footer'>" +
+        "<button type='button' class='btn btn-danger dropdown-toggle' data-dismiss='modal' style='margin-right: 20px;'>关闭</button>" +
+        "<a  href='http://localhost:8080/download?id=" + data.id+"'><button type='button' class='btn btn-success dropdown-toggle' >下载</button></a></div> </div></div></div>"
+      );
+    });
+    }
+
+    function a2(data) {
+      var id="#body"+ data.id+"";
+      $(id).append(data.txt)
+    }
+
+    function a3(id) {
+      var url = "http://localhost:8080/read?id=" + id;
+      conn(url, a2);
+    }
+    function a4(data)
+    {
+      $("#synopsis").append("<p><h2>"+data.newnode+"<span class='label label-default label label-danger'>New</span></h2></p><p>"+data.synopsis+"</p>");
+    }
+    function download(id){
+      var url = "http://localhost:8080/download?id=" + id;
+      conn(url);
+    }
+  </script>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script src="/js/Top.js"></script>
+  <script src="js/cation.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="/js/jquery-3.4.1.min.js"><\/script>')
+  </script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+</body>
+
+</html>

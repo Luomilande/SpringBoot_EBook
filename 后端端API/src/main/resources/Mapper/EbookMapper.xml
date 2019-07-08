@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springboot_ebook.dao.EbookMapper" >
+
+    <select id="selectBookinfoByID"  resultType="Bookinfo">
+        SELECT * FROM bookinfo WHERE id=#{id}
+    </select>
+    <select id="selectBookinfoByIDList"  resultType="Bookinfo">
+        SELECT * FROM bookinfo
+    </select>
+    <select id="selectNodeByNodeIDList"  resultType="Nodeinfo">
+        SELECT * FROM nodeinfo WHERE bookid=#{bookid} ORDER BY id DESC
+    </select>
+    <select id="selectNodeByNodeIDListASC"  resultType="Nodeinfo">
+        SELECT * FROM nodeinfo WHERE bookid=#{bookid} ORDER BY id ASC
+    </select>
+    <select id="selectNodeByNodeID"  resultType="Nodeinfo">
+        SELECT * FROM nodeinfo WHERE id=#{id}
+    </select>
+    <!-- 添加用户 -->
+    <insert id="insertBookinfo" parameterType="bookinfo" >
+				insert into bookinfo(id,bookname,author,synopsis,createDate,imgurl,wordnumber,state,newnode,booktype)
+				VALUES(#{id},#{bookname},#{author},#{synopsis},#{createDate},#{imgurl},#{wordnumber},#{state},#{newnode},#{booktype});
+	</insert>
+
+    <insert id="insertNodeinfo" parameterType="Nodeinfo" >
+				insert into Nodeinfo(id,bookid,nodeName,nodedate,imgurl)
+				VALUES(#{id},#{bookid},#{nodeName},#{nodedate},#{imgurl});
+	</insert>
+
+    <!-- 更新用户 -->
+    <update id="updateUser">
+      update chatpers set username=#{username},t_password=#{password}
+      where t_id=#{id}
+    </update>
+
+    <!-- 删除用户 -->
+    <delete id="deleteUser">
+      delete from chatpers where id=#{id}
+   </delete>
+
+</mapper>
