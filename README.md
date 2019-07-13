@@ -1,6 +1,6 @@
 # SpringBoot_EBook
-Spring Boot框架写的电子书爬虫
-    * 功能介绍：
+ * Spring Boot框架写的电子书爬虫
+ * 功能介绍：
 1、抓取 http://www.shuquge.com/ 网址所有分类书籍的URL；
 2、根据输入的书名去查找数据库的 URL 再进行章节的抓取；
 3、根据输入的 URL 去抓取所有的章节，并保存到本地；
