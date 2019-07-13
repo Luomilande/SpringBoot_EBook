@@ -17,4 +17,6 @@
    *	章节信息实体类: model.Nodeinfo 
    *	sql语句: Mapper.EbookMapper.xml 
    *	跨域处理: SpringbootEbookApplication 
+ * #### 简介：
+   * 项目纯属自娱自乐
 
