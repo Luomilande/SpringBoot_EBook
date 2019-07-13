@@ -10,11 +10,11 @@
    * 前端首页根据书籍id显示，并能提供下载整本书；
    * 前端详细页面根据对应的书籍id加载章节，点击详情时加载对应章节内 容提供实时预览，并提供章节下载；
  * #### 重要的类及接口介绍：
-   *	controller.Homecontroller 总页面控制器
-   *	controller.Http_Request URL请求响应
-   *	dao.EbookMapper 增删改查Mapper接口
-   *	model.Bookinfo 书籍信息实体类
-   *	model.Nodeinfo 章节信息实体类
-   *	Mapper.EbookMapper.xml sql语句
-   *	SpringbootEbookApplication 跨域处理
+   *	总页面控制器: controller.Homecontroller 
+   *	URL请求响应: controller.Http_Request 
+   *	增删改查Mapper接口: dao.EbookMapper 
+   *	书籍信息实体类: model.Bookinfo 
+   *	章节信息实体类: model.Nodeinfo 
+   *	sql语句: Mapper.EbookMapper.xml 
+   *	跨域处理: SpringbootEbookApplication 
 
