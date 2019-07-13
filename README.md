@@ -1,4 +1,8 @@
 # Spring Boot框架写的电子书爬虫
+ * #### 语言：
+   * Java、Javascript、Jquery
+ * #### 涉及技术：
+   * SpringBoot框架、MyBatis框架、MySQL数据库、Bootstrap框架
  * #### 功能介绍：
    * 抓取网址所有分类书籍的URL；
    * 根据输入的书名去查找数据库的 URL 再进行章节的抓取；
